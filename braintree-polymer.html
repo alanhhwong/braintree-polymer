@@ -1,0 +1,37 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="braintree-polymer">
+  <style>
+  </style>
+
+  <template>
+    <div/>  
+  </template>
+  
+  <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+  
+  <script>
+
+    Polymer({
+      is: 'braintree-polymer',
+
+      properties: {
+        clientToken: {
+          type: String
+        }
+      },
+
+      attached: function() {
+        if (!this.clientToken) {
+          console.warn("Client Token is not set - using dummy token instead");
+          this.clientToken = "eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiJkZTc4ZjQzZmQwYmFjMjVkNThkNTIwODE2M2RmNzk0M2RhZTg3OGQ5NzJlMmNlMWM4NzQ1MzM4ODVhNDZjMTRhfGNyZWF0ZWRfYXQ9MjAxNS0wNy0wNlQwNTozODo0NS4xNTU4Mjk2ODArMDAwMFx1MDAyNm1lcmNoYW50X2lkPWo0c3Y4ZDJjNjd6NmtkdGpcdTAwMjZwdWJsaWNfa2V5PXh6YmZqN3ZqcHhiZDJteDMiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvajRzdjhkMmM2N3o2a2R0ai9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbImN2diJdLCJlbnZpcm9ubWVudCI6InNhbmRib3giLCJjbGllbnRBcGlVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvajRzdjhkMmM2N3o2a2R0ai9jbGllbnRfYXBpIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9hc3NldHMuYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJhdXRoVXJsIjoiaHR0cHM6Ly9hdXRoLnZlbm1vLnNhbmRib3guYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJhbmFseXRpY3MiOnsidXJsIjoiaHR0cHM6Ly9jbGllbnQtYW5hbHl0aWNzLnNhbmRib3guYnJhaW50cmVlZ2F0ZXdheS5jb20ifSwidGhyZWVEU2VjdXJlRW5hYmxlZCI6dHJ1ZSwidGhyZWVEU2VjdXJlIjp7Imxvb2t1cFVybCI6Imh0dHBzOi8vYXBpLnNhbmRib3guYnJhaW50cmVlZ2F0ZXdheS5jb206NDQzL21lcmNoYW50cy9qNHN2OGQyYzY3ejZrZHRqL3RocmVlX2Rfc2VjdXJlL2xvb2t1cCJ9LCJwYXlwYWxFbmFibGVkIjp0cnVlLCJwYXlwYWwiOnsiZGlzcGxheU5hbWUiOiJQYXlQYWwiLCJjbGllbnRJZCI6bnVsbCwicHJpdmFjeVVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS9wcCIsInVzZXJBZ3JlZW1lbnRVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vdG9zIiwiYmFzZVVybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9jaGVja291dC5wYXlwYWwuY29tIiwiZGlyZWN0QmFzZVVybCI6bnVsbCwiYWxsb3dIdHRwIjp0cnVlLCJlbnZpcm9ubWVudE5vTmV0d29yayI6dHJ1ZSwiZW52aXJvbm1lbnQiOiJvZmZsaW5lIiwidW52ZXR0ZWRNZXJjaGFudCI6ZmFsc2UsImJyYWludHJlZUNsaWVudElkIjoibWFzdGVyY2xpZW50MyIsIm1lcmNoYW50QWNjb3VudElkIjoiRWNoZWxvbl9ISyIsImN1cnJlbmN5SXNvQ29kZSI6IkhLRCJ9LCJjb2luYmFzZUVuYWJsZWQiOmZhbHNlLCJtZXJjaGFudElkIjoiajRzdjhkMmM2N3o2a2R0aiIsInZlbm1vIjoib2ZmbGluZSJ9";
+        }
+        
+        braintree.setup(this.clientToken, "dropin", {
+          container: this
+        });
+      }
+
+    });
+  </script>
+</dom-module>

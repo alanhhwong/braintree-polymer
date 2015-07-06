@@ -1,0 +1,27 @@
+{
+  "name": "braintree-polymer",
+  "version": "1.0.0",
+  "authors": [
+    "Alan Wong <alawong@paypal.com>"
+  ],
+  "description": "A custom Polymer element for presenting a credit form via Braintree",
+  "keywords": [
+    "braintree",
+    "dropin",
+    "payment"
+  ],
+  "main": "braintree-polymer.html",
+  "license": "",
+  "homepage": "https://github.com/alawong/braintree-polymer/",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "braintree-web": "~2.9.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "*"
+  }
+}
