@@ -14,6 +14,7 @@ An element for presenting a credit form via Braintree
 
 # Running the Demo
 
-Spin up a web server (i.e [polyserve](https://github.com/PolymerLabs/polyserve)) and navigate to demo.html
+Spin up a web server and navigate to demo.html
+ex. python -m SimpleHTTPServer
 
 	
